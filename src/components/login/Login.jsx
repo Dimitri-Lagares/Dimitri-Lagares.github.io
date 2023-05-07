@@ -68,7 +68,7 @@ const AlertOneTimeOut = () => {
       height: '30rem',
       width: '20rem',
       borderRadius: '3%',
-      backgroundImage: 'conic-gradient(black, white, black, white, black)'
+      backgroundImage: 'conic-gradient(white, black, white, black, white, black, white, black, white, black, white, black, white)'
 
     }}>
 
