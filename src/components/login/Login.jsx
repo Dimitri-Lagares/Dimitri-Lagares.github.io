@@ -68,14 +68,14 @@ const AlertOneTimeOut = () => {
       height: '30rem',
       width: '20rem',
       borderRadius: '3%',
-      backgroundImage: 'linear-gradient(to top right, blue, red, blue)'
+      backgroundImage: 'conic-gradient(black, white, black, white, black)'
 
     }}>
 
     {alertOne &&  <Alert severity="warning">debes de llenar los campos</Alert>}
     {alertTwo &&  <Alert severity="error">Usuario o Contraseña incorrectos</Alert>}
 
-    <Typography variant='h3' sx={{fontFamily: 'Ultra', color: '#1876D2', textAlign: 'center'}}>Iniciar Sesion</Typography>
+    <Typography variant='h3' sx={{fontWeight:100, fontFamily: 'Rubik Puddles', color: '#1876D2', textAlign: 'center'}}>Inicio de Sesion</Typography>
     <Box sx={{ minWidth: 275 }}>
     <div style={{
         display: 'flex',
