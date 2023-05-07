@@ -1,7 +1,6 @@
-import './Login.css'
 import { useState} from 'react'
 import { Visibility, VisibilityOff} from '@mui/icons-material';
-import { IconButton, OutlinedInput, InputLabel, InputAdornment, FormControl, Box, Button, Alert, TextField } from '@mui/material/';
+import { IconButton, OutlinedInput, InputLabel, InputAdornment, FormControl, Box, Button, Alert, TextField, Typography } from '@mui/material/';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
@@ -59,14 +58,32 @@ const AlertOneTimeOut = () => {
 
   return (
     
-    <div className='container'>
+    <div style={{
+
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginTop: '10%',
+      height: '30rem',
+      width: '20rem',
+      borderRadius: '3%',
+      backgroundImage: 'linear-gradient(to top right, blue, red, blue)'
+
+    }}>
 
     {alertOne &&  <Alert severity="warning">debes de llenar los campos</Alert>}
     {alertTwo &&  <Alert severity="error">Usuario o Contraseña incorrectos</Alert>}
 
-    <h1 className='inicio-sesion'>Inicio de sesion</h1>
+    <Typography variant='h3' sx={{fontFamily: 'Clarendon Blk BT', color: '#1876D2', textAlign: 'center'}}>Iniciar Sesion</Typography>
     <Box sx={{ minWidth: 275 }}>
-    <div className='card'>
+    <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center', 
+    }}
+    >
     
     <TextField
       color='primary'
