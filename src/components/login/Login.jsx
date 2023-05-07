@@ -65,8 +65,8 @@ const AlertOneTimeOut = () => {
       alignItems: 'center',
       justifyContent: 'center',
       marginTop: '10%',
-      height: '40rem',
-      width: '30rem',
+      height: '30rem',
+      width: '20rem',
       borderRadius: '3%',
       backgroundImage: 'linear-gradient(to top right, blue, red, blue)'
 
@@ -75,7 +75,7 @@ const AlertOneTimeOut = () => {
     {alertOne &&  <Alert severity="warning">debes de llenar los campos</Alert>}
     {alertTwo &&  <Alert severity="error">Usuario o Contraseña incorrectos</Alert>}
 
-    <Typography variant='h3' sx={{fontFamily: 'Clarendon Blk BT', color: '#1876D2', textAlign: 'center'}}>Iniciar Sesion</Typography>
+    <Typography variant='h3' sx={{fontFamily: 'Ultra', color: '#1876D2', textAlign: 'center'}}>Iniciar Sesion</Typography>
     <Box sx={{ minWidth: 275 }}>
     <div style={{
         display: 'flex',
