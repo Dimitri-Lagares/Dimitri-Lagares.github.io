@@ -65,8 +65,8 @@ const AlertOneTimeOut = () => {
       alignItems: 'center',
       justifyContent: 'center',
       marginTop: '10%',
-      height: '30rem',
-      width: '20rem',
+      height: '40rem',
+      width: '30rem',
       borderRadius: '3%',
       backgroundImage: 'linear-gradient(to top right, blue, red, blue)'
 
