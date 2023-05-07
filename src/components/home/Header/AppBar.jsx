@@ -19,7 +19,7 @@ const ResponsiveAppBar = () => {
     navigate(redirection);
   }
 
-  const login = () =>{window.location.href = '/inicio-sesion';}
+  const login = () =>{navigate("/login");}
 
   return (
       <AppBar position='sticky'>
