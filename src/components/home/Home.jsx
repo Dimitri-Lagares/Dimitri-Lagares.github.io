@@ -1,7 +1,7 @@
 import React from 'react'
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
-import Footer from './Footer/footer';
+import Footer from './Footer/Footer';
 import ResponsiveAppBar from './Header/AppBar';
 import { Bootstrap } from './../svg-components/Bootstrap';
 import { Css3 } from './../svg-components/Css3'
