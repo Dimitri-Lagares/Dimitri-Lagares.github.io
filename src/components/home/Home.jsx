@@ -3,7 +3,6 @@ import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import Footer from './Footer/Footer';
 import ResponsiveAppBar from './Header/AppBar';
-import Box from '@mui/material/Box';
 import { Bootstrap } from './../svg-components/Bootstrap';
 import { Css3 } from './../svg-components/Css3'
 import { Express } from './../svg-components/Express'
@@ -17,7 +16,7 @@ import { Typography } from '@mui/material';
 
 const Home = () => {
   return (
-    <Box>
+    <Stack>
       <ResponsiveAppBar/>
       <Typography>
         hola! soy Dimitri lagares!<br/>
@@ -61,11 +60,11 @@ const Home = () => {
         <ReactIcon/>
       </Avatar>
     </Stack>
-      <Box>
+      <Stack>
         👇🏽Aqui una captura de pantalla de algunos de los proyectos realizados con su link a su repositorio en GitHub👇🏽
-      </Box>
+      </Stack>
       <Footer/>
-    </Box>
+    </Stack>
   )
 }
 
