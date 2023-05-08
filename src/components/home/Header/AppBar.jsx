@@ -22,7 +22,7 @@ const ResponsiveAppBar = () => {
   const login = () =>{navigate("/login");}
 
   return (
-      <AppBar position='sticky'>
+      <AppBar color='transparent' position='sticky'>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
