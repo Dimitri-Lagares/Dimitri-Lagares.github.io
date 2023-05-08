@@ -3,7 +3,7 @@ import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import Footer from './Footer/Footer';
 import ResponsiveAppBar from './Header/AppBar';
-import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
 import { Bootstrap } from './../svg-components/Bootstrap';
 import { Css3 } from './../svg-components/Css3'
 import { Express } from './../svg-components/Express'
@@ -13,16 +13,17 @@ import { Js } from './../svg-components/Js'
 import { Mui } from './../svg-components/Mui'
 import { Mysql } from './../svg-components/Mysql'
 import { ReactIcon } from './../svg-components/ReactIcon'
+import { Typography } from '@mui/material';
 
 const Home = () => {
   return (
-    <Grid container>
+    <Box>
       <ResponsiveAppBar/>
-      <Grid>
+      <Typography>
         hola! soy Dimitri lagares!<br/>
         Programador fullstack en desarrollo,
         en la actualidad he manejado las siguientes tecnologías:<br/>
-      </Grid>
+      </Typography>
       <Stack direction="row" style={{ m:'auto', justifyContent:'center', border: 'solid', borderRadius: 50, borderBlockColor:'#f0f0f0'}} spacing={2}>
       <Avatar>
         <Html/>
@@ -60,11 +61,11 @@ const Home = () => {
         <ReactIcon/>
       </Avatar>
     </Stack>
-      <Grid>
+      <Box>
         👇🏽Aqui una captura de pantalla de algunos de los proyectos realizados con su link a su repositorio en GitHub👇🏽
-      </Grid>
+      </Box>
       <Footer/>
-    </Grid>
+    </Box>
   )
 }
 
