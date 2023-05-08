@@ -31,7 +31,7 @@ const Footer = () => {
      showWarningAlertTimeOut()
     }else{
  
-     axios.post('http://proyecto-integrador-back-production.up.railway.app/send-form', {nombre, correo, telefono, solicitud, comentario})
+     axios.post('https://proyecto-integrador-back-production.up.railway.app/send-form', {nombre, correo, telefono, solicitud, comentario})
      .then((response) => {
        setNombre("")
        setCorreo("")
