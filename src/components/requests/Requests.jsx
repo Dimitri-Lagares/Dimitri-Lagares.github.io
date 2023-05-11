@@ -43,17 +43,6 @@ const Requests = () => {
   const [open2, setOpen2] = useState(false);
   const [open3, setOpen3] = useState(false);
   const navigate = useNavigate()
-  
-  const onNameChange = e => setNombre(e.target.value)
-  const onEmailChange = e => setCorreo(e.target.value)
-  const onCelphoneChange = e => setTelefono(e.target.value)
-  const onRequestChange = e => setSolicitud(e.target.value)
-  const onCommentChange = e => setComentario(e.target.value)
-  const onUserChange = e => setUser(e.target.value)
-  const onPasswordChange = e => setPassword(e.target.value)
-  const handleClose = () => {setOpen(false);};
-  const handleClose2 = () => {setOpen2(false);};
-  const handleClose3 = () => {setOpen3(false);};
   const redirectToHome = () => {navigate('/')}
 
   useEffect(()=>{
@@ -164,27 +153,26 @@ const Requests = () => {
 
   return (
     <div>
-      <Dialog open={open} onClose={handleClose}>
+      <Dialog open={open} onClose={()=> setOpen(false)}>
         <DialogTitle>Editar fila</DialogTitle>
         <DialogContent>
           <DialogContentText>
             Termina de editar la fila y presiona actualizar
           </DialogContentText>
 
-      <TextField sx={{m:1}} variant="filled" id="outlined-basic" label="Nombre" value={nombre} onChange={onNameChange}/>
-      <TextField sx={{m:.7}} variant="filled" id="outlined-basic" label="Correo" value={correo} onChange={onEmailChange}/>
-      <TextField sx={{m:.7}} variant="filled" id="outlined-basic" label="telefono" value={telefono} onChange={onCelphoneChange} type='number'/>
-      <TextField sx={{m:.7}} variant="filled" id="outlined-basic" label="solicitud" value={solicitud} onChange={onRequestChange}/>
-      <TextField sx={{m:.7}} variant="filled" id="outlined-basic" label="comentario" value={comentario} onChange={onCommentChange}/>
-        
+      <TextField sx={{m:1}} variant="filled" id="outlined-basic" label="Nombre" value={nombre} onChange={(e)=> setNombre(e.target.value)}/>
+      <TextField sx={{m:.7}} variant="filled" id="outlined-basic" label="Correo" value={correo} onChange={(e)=> setCorreo(e.target.value)}/>
+      <TextField sx={{m:.7}} variant="filled" id="outlined-basic" label="telefono" value={telefono} onChange={(e)=> setTelefono(e.target.value)} type='number'/>
+      <TextField sx={{m:.7}} variant="filled" id="outlined-basic" label="solicitud" value={solicitud} onChange={(e)=> setSolicitud(e.target.value)}/>
+      <TextField sx={{m:.7}} variant="filled" id="outlined-basic" label="comentario" value={comentario} onChange={(e)=> setComentario(e.target.value)}/>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancelar</Button>
+          <Button onClick={()=> setOpen(false)}>Cancelar</Button>
       <Button onClick={buttonUpdate}>actualizar</Button>
         </DialogActions>
       </Dialog>
 
-      <Dialog open={open2} onClose={handleClose2}>
+      <Dialog open={open2} onClose={()=> setOpen2(false)}>
         <DialogTitle>¿Estas seguro que deseas eliminar la fila?</DialogTitle>
         <DialogContent>
         <TableContainer component={Paper}>
@@ -211,12 +199,12 @@ const Requests = () => {
         </TableBody>
       </Table>
     </TableContainer>
-          <Button sx={{m:1}}  variant='outlined' onClick={handleClose2}>Cancelar</Button>
+          <Button sx={{m:1}}  variant='outlined' onClick={()=> setOpen2(false)}>Cancelar</Button>
           <Button sx={{m:1}} variant='outlined' onClick={() => {confirmedDelete()}} startIcon={<Delete />}>Eliminar</Button>
         </DialogContent>
       </Dialog>
 
-      <Dialog open={open3} onClose={handleClose3}>
+      <Dialog open={open3} onClose={()=> setOpen3(false)}>
         <DialogTitle>Agregar Usuario</DialogTitle>
         <DialogContent>
           <DialogContentText>
@@ -225,12 +213,12 @@ const Requests = () => {
       {showWarningAlert &&  <Alert severity="warning">Debes de llenar todos los campos</Alert>}
       {showWarningAlert2 && <Alert severity="warning">Ha ocurrido un error, revisa la consola para saber mas</Alert>}
 
-      <TextField sx={{m:.7}} variant="filled" id="outlined-basic" label="Usuario" value={user} onChange={onUserChange}/>
-      <TextField sx={{m:.7}} variant="filled" id="outlined-basic" label="Contraseña" value={password} onChange={onPasswordChange}/>
+      <TextField sx={{m:.7}} variant="filled" id="outlined-basic" label="Usuario" value={user} onChange={(e)=> setUser(e.target.value)}/>
+      <TextField sx={{m:.7}} variant="filled" id="outlined-basic" label="Contraseña" value={password} onChange={(e)=> setPassword(e.target.value)}/>
         
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose3}>Cancelar</Button>
+          <Button onClick={()=> setOpen3(false)}>Cancelar</Button>
       <Button onClick={buttonAddUser}>agregar usuario</Button>
         </DialogActions>
       </Dialog>

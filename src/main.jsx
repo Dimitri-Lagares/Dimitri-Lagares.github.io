@@ -7,7 +7,7 @@ import Requests from "./components/requests/Requests";
 import ProtectedRoute from "./components/login/ProtectedRoute"
 import './index.css'
 
-var isAllowed = false
+var isAllowed = true
 let previousTitle = document.title
 
 window.addEventListener('blur', () => {
