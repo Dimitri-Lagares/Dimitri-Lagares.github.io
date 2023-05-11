@@ -20,9 +20,9 @@ const Footer = () => {
   const onChangeTelefono = (e) => {setTelefono(e.target.value)}
   const onChangeSolicitud = (e) => {setSolicitud(e.target.value)}
   const onChangeComentario = (e) => {setComentario(e.target.value)}
-  const onClickGitHub = (e) => {window.open('https://github.com/DragonSArmS/')}
+  const onClickGitHub = (e) => {window.open('https://github.com/Dimitri-Lagares/')}
   const onClickWhatsApp = (e) => {window.open('https://api.whatsapp.com/send?phone=573236642619')}
-  const onClickLinkedIn = (e) => {window.open('https://www.linkedin.com/in/aslei-lagares/')}
+  const onClickLinkedIn = (e) => {window.open('https://www.linkedin.com/in/dimitri-lagares/')}
   const onClickEmail = (e) => {window.open('mailto:lagares.dimitri@gmail.com')}
 
   const buttonSave = () =>{
