@@ -8,6 +8,14 @@ import ProtectedRoute from "./components/login/ProtectedRoute"
 import './index.css'
 
 var isAllowed = false
+let previousTitle = document.title
+
+window.addEventListener('blur', () => {
+  document.title = '¡No te vayas! ¡Vuelve! 😱'
+})
+
+window.addEventListener('focus', () => {
+  document.title = previousTitle })
 
 const functionToGetchildData = (validateRouteLogin) => {
   if (validateRouteLogin === ''){
