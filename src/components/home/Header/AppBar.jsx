@@ -117,7 +117,7 @@ sx={{
 >
 {languages.map((language) => (
   <MenuItem key={language} onClick={selected}>
-    <Typography textAlign="center">{language}</Typography>
+    <Typography fontFamily={'Noto Color Emoji'} textAlign="center">{language}</Typography>
   </MenuItem>
 ))}
 </Menu>
@@ -153,7 +153,8 @@ sx={{
                 {page}
               </Button>
             ))}
-          <Box sx={{m:'auto'}} >
+          <Box sx={{display:'flex', m:'auto', width: 'fit-content'}} >
+            <Typography sx={{m:'auto'}} >|</Typography>
           <IconButton
 size="large"
 aria-label="account of current user"
@@ -189,8 +190,10 @@ sx={{
   </MenuItem>
 ))}
 </Menu>
+<Typography sx={{m:'auto'}} >|</Typography>
 
             <CustomizedSwitches />
+            <Typography sx={{m:'auto'}} >|</Typography>
 
           </Box>
 

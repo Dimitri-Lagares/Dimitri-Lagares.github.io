@@ -52,7 +52,8 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 export default function CustomizedSwitches() {
   return (
     <FormControlLabel
-    control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
+    sx={{m:0}}
+    control={<MaterialUISwitch sx={{ m:1 }} defaultChecked />}
     />
   );
 }
