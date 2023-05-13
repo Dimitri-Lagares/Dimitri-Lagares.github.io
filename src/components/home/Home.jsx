@@ -1,6 +1,5 @@
 import React from 'react'
-import Avatar from '@mui/material/Avatar';
-import Stack from '@mui/material/Stack';
+import { Typography, Stack, Avatar } from '@mui/material';
 import Footer from './Footer/Footer';
 import ResponsiveAppBar from './Header/AppBar';
 import { Bootstrap } from './../svg-components/Bootstrap';
@@ -12,7 +11,6 @@ import { Js } from './../svg-components/Js'
 import { Mui } from './../svg-components/Mui'
 import { Mysql } from './../svg-components/Mysql'
 import { ReactIcon } from './../svg-components/ReactIcon'
-import { Typography } from '@mui/material';
 
 const Home = () => {
   return (

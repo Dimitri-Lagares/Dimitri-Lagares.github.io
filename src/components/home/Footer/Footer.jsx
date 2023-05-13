@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { useState } from 'react';
 import axios from 'axios';
-import { Send, GitHub, WhatsApp, Email, LinkedIn } from '@mui/icons-material';
-import { Stack, IconButton, Button, TextField, Box, Alert, Typography } from '@mui/material';
+import { Send } from '@mui/icons-material';
+import { Button, TextField, Box, Alert, Typography } from '@mui/material';
 
 const Footer = () => {
   const [showSuccessAlert, setShowSuccessAlert] = useState(false);
@@ -14,17 +14,12 @@ const Footer = () => {
   const [solicitud, setSolicitud] = useState("");
   const [comentario, setComentario] = useState("");
 
-
   const onChangeNombre = (e) => {setNombre(e.target.value)}
   const onChangeCorreo = (e) => {setCorreo(e.target.value)}
   const onChangeTelefono = (e) => {setTelefono(e.target.value)}
   const onChangeSolicitud = (e) => {setSolicitud(e.target.value)}
   const onChangeComentario = (e) => {setComentario(e.target.value)}
-  const onClickGitHub = (e) => {window.open('https://github.com/Dimitri-Lagares/')}
-  const onClickWhatsApp = (e) => {window.open('https://api.whatsapp.com/send?phone=573236642619')}
-  const onClickLinkedIn = (e) => {window.open('https://www.linkedin.com/in/dimitri-lagares/')}
-  const onClickEmail = (e) => {window.open('mailto:lagares.dimitri@gmail.com')}
-
+  
   const buttonSave = () =>{
     if (nombre === "" || correo === "" || telefono === "" || solicitud === "" || comentario === ""){
      setShowWarningAlert(true)
@@ -138,26 +133,9 @@ const Footer = () => {
           </Button>
       </Box>
           <hr/>
-      <Stack direction="row" spacing={1}>
-          <IconButton color='inherit' onClick={onClickGitHub}>
-            <GitHub/>
-          </IconButton>
-    
-          <IconButton color='inherit' onClick={onClickWhatsApp}>
-            <WhatsApp/>
-          </IconButton>
-    
-          <IconButton color='inherit' onClick={onClickLinkedIn}>
-          <LinkedIn/>
-          </IconButton>
-    
-          <IconButton color='inherit' onClick={onClickEmail}>
-          <Email/>
-          </IconButton>
-    
+
           <Typography variant={"inherit"} sx={{alignSelf: 'center'}} fontSize={19}>lagares.dimitri@gmail.com</Typography>
           <Typography variant={"inherit"} sx={{alignSelf: 'center'}} fontSize={19}>+57 3236642619</Typography>
-      </Stack>
     </div>
   </footer>
   )
