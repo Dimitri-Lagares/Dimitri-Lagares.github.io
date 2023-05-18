@@ -13,12 +13,6 @@ const Footer = () => {
   const [telefono, setTelefono] = useState("");
   const [solicitud, setSolicitud] = useState("");
   const [comentario, setComentario] = useState("");
-
-  const onChangeNombre = (e) => {setNombre(e.target.value)}
-  const onChangeCorreo = (e) => {setCorreo(e.target.value)}
-  const onChangeTelefono = (e) => {setTelefono(e.target.value)}
-  const onChangeSolicitud = (e) => {setSolicitud(e.target.value)}
-  const onChangeComentario = (e) => {setComentario(e.target.value)}
   
   const buttonSave = () =>{
     if (nombre === "" || correo === "" || telefono === "" || solicitud === "" || comentario === ""){
@@ -84,7 +78,7 @@ const Footer = () => {
           variant="outlined"
           placeholder='Dimitri'
           value={nombre}
-          onChange={onChangeNombre}
+          onChange={(e)=> setNombre(e.target.value)}
           type='text'
           />
 
@@ -94,7 +88,7 @@ const Footer = () => {
           variant="outlined"
           placeholder='lagares.dimitri@gmail.com'
           value={correo}
-          onChange={onChangeCorreo}
+          onChange={(e)=> setCorreo(e.target.value)}
           type='email'
           />
 
@@ -104,7 +98,7 @@ const Footer = () => {
           variant="outlined"
           placeholder='3236642619'
           value={telefono}
-          onChange={onChangeTelefono}
+          onChange={(e)=> setTelefono(e.target.value)}
           type='number'
           />
 
@@ -114,7 +108,7 @@ const Footer = () => {
           variant="outlined"
           placeholder='Digita tu solicitud'
           value={solicitud}
-          onChange={onChangeSolicitud}
+          onChange={(e)=> setSolicitud(e.target.value)}
           />
 
         <TextField
@@ -125,7 +119,7 @@ const Footer = () => {
           rows={4}
           placeholder="Por favor ingrese el comentario que deseas dejar"
           value={comentario}
-          onChange={onChangeComentario}
+          onChange={(e)=> setComentario(e.target.value)}
         />
 
           <Button sx={{m:1}} variant='contained' endIcon={<Send />} onClick={buttonSave}>
