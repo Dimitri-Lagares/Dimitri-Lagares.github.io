@@ -44,37 +44,43 @@ const Requests = () => {
   const [open3, setOpen3] = useState(false);
   const navigate = useNavigate()
   const redirectToHome = () => {navigate('/')}
+  const URL = 'https://integrator-project-back-end.onrender.com';
 
   useEffect(()=>{
     getData()
   },[])
 
+  const config = {
+    headers:{
+      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBydWViYTEiLCJwYXNzd29yZCI6InBydWViYTEiLCJpYXQiOjE2ODkxMjk2NzF9.ZTJ1g5I-QX78CnvBAquzj-luFShUe-j2SDgVTt09QMc'
+    }
+  };
+
   const getData = async () => {
     try{
-      const {data: response} = await axios.get('https://proyecto-integrador-back-production.up.railway.app/form')
+      const {data: response} = await axios.get(`${URL}/form/show-data`, config)
       setData(response)
     } catch (error) {
       console.log(error.message)
     }
   }
-
   const tableEdit = ((getTableData) => {
-    setIdform(getTableData.idform)
-    setNombre(getTableData.nombre)
-    setCorreo(getTableData.correo)
-    setTelefono(getTableData.telefono)
-    setSolicitud(getTableData.solicitud)
-    setComentario(getTableData.comentario)
+    setIdform(getTableData.id)
+    setNombre(getTableData.name)
+    setCorreo(getTableData.email)
+    setTelefono(getTableData.phone)
+    setSolicitud(getTableData.request)
+    setComentario(getTableData.comment)
     setOpen(true)
   })
 
   const tableDelete = ((getTableData) => {
-    setIdform(getTableData.idform)
-    setNombre(getTableData.nombre)
-    setCorreo(getTableData.correo)
-    setTelefono(getTableData.telefono)
-    setSolicitud(getTableData.solicitud)
-    setComentario(getTableData.comentario)
+    setIdform(getTableData.id)
+    setNombre(getTableData.name)
+    setCorreo(getTableData.email)
+    setTelefono(getTableData.phone)
+    setSolicitud(getTableData.request)
+    setComentario(getTableData.comment)
     setOpen2(true)
   })
 
@@ -82,7 +88,7 @@ const Requests = () => {
     setOpen3(true)
   }
   const confirmedDelete = () => {
-    axios.delete(`https://proyecto-integrador-back-production.up.railway.app/delete-row/${idform}`).then(() =>{
+    axios.delete(`${URL}/form/delete-item/${idform}`, config).then(() =>{
     setOpen2(false)
     getData()
     setShowSuccessAlert2(true)
@@ -91,7 +97,7 @@ const Requests = () => {
   }
 
   const buttonUpdate = (() => {
-    axios.put(`https://proyecto-integrador-back-production.up.railway.app/update-row/${idform}`, {idform, nombre, correo, telefono, solicitud, comentario})
+    axios.put(`${URL}/form/update-item/${idform}`, {id: idform, name: nombre, email: correo, phone: telefono, request: solicitud, comment: comentario}, config)
     .then(()=>{
       getData()
       setNombre("")
@@ -113,12 +119,13 @@ const Requests = () => {
      showWarningAlertTimeOut()
     }else{
  
-     axios.post('https://proyecto-integrador-back-production.up.railway.app/add-user', {user, password})
+     axios.post(`${URL}/form/add-user`, {email: user, password}, config)
      .then((response) => {
        setUser("")
        setPassword("")
        setShowSuccessAlert(true)
        showSuccessAlertTimeOut()
+       setOpen3(false)
      }).catch((error) => {
        console.log(error)
        setShowWarningAlert2(true)
@@ -268,13 +275,13 @@ const Requests = () => {
         </TableHead>
         <TableBody>
           {data.map((row) => (
-            <StyledTableRow key={row.idform}>
-              <StyledTableCell component="th" scope="row">{row.idform}</StyledTableCell>
-              <StyledTableCell align="center">{row.nombre}</StyledTableCell>
-              <StyledTableCell align="center">{row.correo}</StyledTableCell>
-              <StyledTableCell align="center">{row.telefono}</StyledTableCell>
-              <StyledTableCell align="center">{row.solicitud}</StyledTableCell>
-              <StyledTableCell align="center">{row.comentario}</StyledTableCell>
+            <StyledTableRow key={row.id}>
+              <StyledTableCell component="th" scope="row">{row.id}</StyledTableCell>
+              <StyledTableCell align="center">{row.name}</StyledTableCell>
+              <StyledTableCell align="center">{row.email}</StyledTableCell>
+              <StyledTableCell align="center">{row.phone}</StyledTableCell>
+              <StyledTableCell align="center">{row.request}</StyledTableCell>
+              <StyledTableCell align="center">{row.comment}</StyledTableCell>
               <StyledTableCell align="center"><IconButton onClick={() => {tableEdit(row)}}><Edit/></IconButton></StyledTableCell>
               <StyledTableCell align="center"><IconButton onClick={() => {tableDelete(row)}}><Delete/></IconButton></StyledTableCell>
             </StyledTableRow>

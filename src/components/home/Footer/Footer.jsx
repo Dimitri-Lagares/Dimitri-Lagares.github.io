@@ -8,25 +8,26 @@ const Footer = () => {
   const [showSuccessAlert, setShowSuccessAlert] = useState(false);
   const [showWarningAlert, setShowWarningAlert] = useState(false);
   const [showWarningAlert2, setShowWarningAlert2] = useState(false);
-  const [nombre, setNombre] = useState("");
-  const [correo, setCorreo] = useState("");
-  const [telefono, setTelefono] = useState("");
-  const [solicitud, setSolicitud] = useState("");
-  const [comentario, setComentario] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [request, setRequest] = useState("");
+  const [comment, setComment] = useState("");
+  const URL = 'https://integrator-project-back-end.onrender.com';
   
   const buttonSave = () =>{
-    if (nombre === "" || correo === "" || telefono === "" || solicitud === "" || comentario === ""){
+    if (name === "" || email === "" || phone === "" || request === "" || comment === ""){
      setShowWarningAlert(true)
      showWarningAlertTimeOut()
     }else{
  
-     axios.post('https://proyecto-integrador-back-production.up.railway.app/send-form', {nombre, correo, telefono, solicitud, comentario})
+     axios.post(`${URL}/auth/send-data`, {name, email, phone, request, comment})
      .then((response) => {
-       setNombre("")
-       setCorreo("")
-       setTelefono("")
-       setSolicitud("")
-       setComentario("")
+       setName("")
+       setEmail("")
+       setPhone("")
+       setRequest("")
+       setComment("")
        setShowSuccessAlert(true)
        showSuccessAlertTimeOut()
      }).catch((error) => {
@@ -77,18 +78,18 @@ const Footer = () => {
           label="Nombre"
           variant="outlined"
           placeholder='Dimitri'
-          value={nombre}
-          onChange={(e)=> setNombre(e.target.value)}
+          value={name}
+          onChange={(e)=> setName(e.target.value)}
           type='text'
           />
 
         <TextField
           required
-          label="Correo"
+          label="Correo Electronico"
           variant="outlined"
           placeholder='lagares.dimitri@gmail.com'
-          value={correo}
-          onChange={(e)=> setCorreo(e.target.value)}
+          value={email}
+          onChange={(e)=> setEmail(e.target.value)}
           type='email'
           />
 
@@ -97,8 +98,8 @@ const Footer = () => {
           label="Teléfono/Celular"
           variant="outlined"
           placeholder='3236642619'
-          value={telefono}
-          onChange={(e)=> setTelefono(e.target.value)}
+          value={phone}
+          onChange={(e)=> setPhone(e.target.value)}
           type='number'
           />
 
@@ -107,8 +108,8 @@ const Footer = () => {
           label="Solicitud"
           variant="outlined"
           placeholder='Digita tu solicitud'
-          value={solicitud}
-          onChange={(e)=> setSolicitud(e.target.value)}
+          value={request}
+          onChange={(e)=> setRequest(e.target.value)}
           />
 
         <TextField
@@ -118,8 +119,8 @@ const Footer = () => {
           multiline
           rows={4}
           placeholder="Por favor ingrese el comentario que deseas dejar"
-          value={comentario}
-          onChange={(e)=> setComentario(e.target.value)}
+          value={comment}
+          onChange={(e)=> setComment(e.target.value)}
         />
 
           <Button sx={{m:1}} variant='contained' endIcon={<Send />} onClick={buttonSave}>

@@ -7,35 +7,35 @@ import axios from 'axios';
 const Login = ({childToParentData}) => {
   
   const [showPassword, setShowPassword] = useState(false);
-  const [user, setUser] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [alertOne, setAlertOne] = useState(false);
   const [alertTwo, setAlertTwo] = useState(false);
   const [data, setData] = useState('')
   const navigate = useNavigate();
-
+  const URL = 'https://integrator-project-back-end.onrender.com';
   
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   const handleMouseDownPassword = (event) => {event.preventDefault();};
-  const OnChangeUser = (event) => {setUser(event.target.value)};
+  const OnChangeUser = (event) => {setEmail(event.target.value)};
   const OnChangePassword = (event) => {setPassword(event.target.value)};
   const redirectToHome = () => {navigate('/')}
 
   const login = () => {
-    if (user === '' || password === ''){
+    if (email === '' || password === ''){
        setAlertOne(true)
        AlertOneTimeOut() 
     }else {  
-      axios.post('https://proyecto-integrador-back-production.up.railway.app/login', {user, password})
+      axios.post(`${URL}/auth/login`, {email, password})
       .then((response) => {
-        setUser('')
+        setEmail('')
         setPassword('')
         setData(response.data)
         childToParentData(data)
         navigate('/solicitudes')
       })
       .catch((err) => {
-        setUser('')
+        setEmail('')
         setPassword('')
         setData('')
         setAlertTwo(true)
@@ -90,7 +90,7 @@ const AlertOneTimeOut = () => {
       variant='outlined'
       label="Usuario"
       id="outlined"
-      value={user}
+      value={email}
       onChange={OnChangeUser}
       sx={{ m: 1, width: '25ch' }}
     />
