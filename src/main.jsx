@@ -1,41 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { HashRouter, Routes, Route } from 'react-router-dom';
-import Home from "./components/home/Home";
-import Login from "./components/login/Login";
-import Requests from "./components/requests/Requests";
-import ProtectedRoute from "./components/login/ProtectedRoute"
+import App from './App';
 import './index.css'
 
-var isAllowed = true
-let previousTitle = document.title
-
-window.addEventListener('blur', () => {
-  previousTitle = document.title
-  document.title = '¡No te vayas! ¡Vuelve! 😱'
-})
-
-window.addEventListener('focus', () => {
-  document.title = previousTitle })
-
-const functionToGetchildData = (validateRouteLogin) => {
-  if (validateRouteLogin === ''){
-    isAllowed=true
-  } else {
-    isAllowed=false
-  }
-}
-
 ReactDOM.createRoot(document.getElementById('root')).render(
-<React.StrictMode>
-  <HashRouter>
-    <Routes>
-      <Route path="*" element={<Home />} />
-      <Route path="login" element={<Login />} />
-      <Route element={<ProtectedRoute isAllowed={isAllowed}/> }>
-        <Route path="requests" element={<Requests />} />
-      </Route>
-    </Routes>
-  </HashRouter>
+  <React.StrictMode>
+    <App/>
 </React.StrictMode>,
 )

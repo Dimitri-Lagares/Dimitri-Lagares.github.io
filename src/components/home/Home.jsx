@@ -1,5 +1,5 @@
 import React from 'react'
-import { Typography, Stack, Avatar } from '@mui/material';
+import { Typography, Stack, Avatar, Alert } from '@mui/material';
 import Footer from './Footer/Footer';
 import ResponsiveAppBar from './Header/AppBar';
 import { Css3 } from './../svg-components/Css3'
@@ -16,6 +16,9 @@ const Home = () => {
   return (
     <Stack>
       <ResponsiveAppBar/>
+      <div  style={{ marginTop: 10, marginBottom: 10 }}>
+      <Alert severity="info">Esta pagina web aun se encuentra en construccion, si deseas probrar el sistema login y ver que hay dentro puedes usar como email <b>email@email.com</b> y como contraseña <b>password</b> </Alert>
+      </div>
       <Typography>
         hola! soy Dimitri lagares!<br/>
         Programador fullstack en desarrollo,

@@ -28,11 +28,11 @@ const Login = ({childToParentData}) => {
     }else {  
       axios.post(`${URL}/auth/login`, {email, password})
       .then((response) => {
-        setEmail('')
-        setPassword('')
         setData(response.data)
         childToParentData(data)
-        navigate('/solicitudes')
+        navigate('/requests')
+        setEmail('')
+        setPassword('')
       })
       .catch((err) => {
         setEmail('')
