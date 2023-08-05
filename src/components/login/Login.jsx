@@ -73,7 +73,7 @@ const AlertOneTimeOut = () => {
     }}>
 
     {alertOne &&  <Alert severity="warning">debes de llenar los campos</Alert>}
-    {alertTwo &&  <Alert severity="error">Usuario o Contraseña incorrectos</Alert>}
+    {alertTwo &&  <Alert severity="error">Correo Electrónico o Contraseña incorrectos</Alert>}
 
     <Typography variant='h3' sx={{fontWeight:100, fontFamily: 'Rubik Puddles', color: '#1876D2', textAlign: 'center'}}>Inicio de Sesion</Typography>
     <Box sx={{ minWidth: 275 }}>
@@ -88,7 +88,7 @@ const AlertOneTimeOut = () => {
     <TextField
       color='primary'
       variant='outlined'
-      label="Usuario"
+      label="Correo Electrónico"
       id="outlined"
       value={email}
       onChange={OnChangeUser}
