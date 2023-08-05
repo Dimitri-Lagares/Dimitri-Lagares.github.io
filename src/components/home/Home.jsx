@@ -17,7 +17,7 @@ const Home = () => {
     <Stack>
       <ResponsiveAppBar/>
       <div  style={{ marginTop: 10, marginBottom: 10 }}>
-      <Alert severity="info">Esta pagina web aun se encuentra en construccion, si deseas probrar el sistema login y ver que hay dentro puedes usar como email <b>email@email.com</b> y como contraseña <b>password</b> </Alert>
+      <Alert severity="info">Esta pagina web aun se encuentra en construccion, si deseas probrar el sistema login y ver que hay dentro puedes usar como email <b>email@email.com</b> y como contraseña <b>password</b> <br/><b>adicionalmente comento que como el backend de mi pagina se encuentra alojado en un servicio gratuito es bastante lento, ¡GRACIAS por tu visita! </b> </Alert>
       </div>
       <Typography>
         hola! soy Dimitri lagares!<br/>
